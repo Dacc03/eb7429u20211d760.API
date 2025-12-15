@@ -24,7 +24,7 @@ public static class WebApplicationBuilderExtensions
             {
                 Title = "Toggl Platform API",
                 Version = "v1",
-                Description = "RESTful API for LetPot Smart Self-Watering Planter operations",
+                Description = "RESTful API for Toggl Project & Time Management Hub",
                 Contact = new OpenApiContact
                 {
                     Name = "Antonio Rodrigo Duran Diaz",
