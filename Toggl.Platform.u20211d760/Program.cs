@@ -1,4 +1,5 @@
 using Cortex.Mediator.DependencyInjection;
+using Microsoft.AspNetCore.Localization;
 using Toggl.Platform.u20211d760.Projects.Application.ACL.Services;
 using Toggl.Platform.u20211d760.Projects.Application.Internal.EventHandlers;
 using Toggl.Platform.u20211d760.Projects.Application.Internal.QueryServices;
@@ -29,19 +30,19 @@ builder.Services.AddControllers(options =>
 builder.AddDatabaseServices();
 
 // Register repositories
-builder.Services.AddScoped<IDataRecordRepository, DataRecordRepository>();
-builder.Services.AddScoped<IPotRepository, PotRepository>();
+builder.Services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
 // Register services
-builder.Services.AddScoped<IDataRecordCommandService, DataRecordCommandService>();
-builder.Services.AddScoped<IDataRecordQueryService, DataRecordQueryService>();
-builder.Services.AddScoped<IPotQueryService, PotQueryService>();
+builder.Services.AddScoped<ITimeEntryCommandService, TimeEntryCommandService>();
+builder.Services.AddScoped<ITimeEntryQueryService, TimeEntryQueryService>();
+builder.Services.AddScoped<IProjectQueryService, ProjectQueryService>();
 
 // Register ACL
 builder.Services.AddScoped<IProjectsContextFacade, ProjectsContextFacade>();
 
 // Register Event Handlers
-builder.Services.AddScoped<IEventHandler<DataRecordRegisteredEvent>, DataRecordRegisteredEventHandler>();
+builder.Services.AddScoped<IEventHandler<TimeEntryRegisteredEvent>, TimeEntryRegisteredEventHandler>();
 
 // Add Cortex Mediator
 builder.Services.AddCortexMediator(builder.Configuration, new[] { typeof(Program) });

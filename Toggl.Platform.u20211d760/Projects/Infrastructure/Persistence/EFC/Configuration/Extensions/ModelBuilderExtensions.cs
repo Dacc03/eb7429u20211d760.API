@@ -1,5 +1,6 @@
-using Toggl.Platform.u20211d760.Projects.Domain.Model.Aggregates;
 using Microsoft.EntityFrameworkCore;
+using Toggl.Platform.u20211d760.Projects.Domain.Model.Aggregates;
+using Toggl.Platform.u20211d760.Projects.Domain.Model.ValueObjects;
 
 namespace Toggl.Platform.u20211d760.Projects.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
@@ -7,69 +8,75 @@ namespace Toggl.Platform.u20211d760.Projects.Infrastructure.Persistence.EFC.Conf
 /// Extension methods for configuring the Projects context model.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: Rafael Oswaldo Castro Veramendi
 /// </remarks>
 public static class ModelBuilderExtensions
 {
     public static void ApplyProjectsConfiguration(this ModelBuilder builder)
     {
-        builder.Entity<Pot>(entity =>
+        builder.Entity<Project>(entity =>
         {
-            entity.ToTable("Pot");
+            entity.ToTable("Project");
             entity.HasKey(e => e.Id);
-            entity.Property(e => e.Id).HasColumnName("pot_id").ValueGeneratedOnAdd();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.WorkSpaceId).IsRequired();
+            entity.Property(e => e.Name).HasMaxLength(60).IsRequired();
+            entity.Property(e => e.Billable).IsRequired();
+            entity.Property(e => e.Status).IsRequired();
 
-            entity.OwnsOne(e => e.MacAddress, mac =>
+            entity.OwnsOne(e => e.CreatedBy, createdBy =>
             {
-                mac.WithOwner().HasForeignKey("PotId");
-                mac.HasKey("PotId");
-                mac.Property<int>("PotId").HasColumnName("pot_id").ValueGeneratedNever();
-                mac.Property(m => m.Address).HasColumnName("mac_address").IsRequired();
+                createdBy.WithOwner().HasForeignKey("ProjectId");
+                createdBy.Property(cb => cb.Value).HasColumnName("created_by").IsRequired();
+                createdBy.HasKey("ProjectId");
             });
-            
-            entity.Property(e => e.CustomerId).IsRequired();
-            entity.Property(e => e.PreferredHumidityLevel).HasPrecision(5, 2).IsRequired();
         });
 
-        // Seed initial data
-        SeedPots(builder);
+        SeedProjects(builder);
     }
 
-    private static void SeedPots(ModelBuilder builder)
+    private static void SeedProjects(ModelBuilder builder)
     {
-        builder.Entity<Pot>().HasData(
+        builder.Entity<Project>().HasData(
             new
             {
                 Id = 1,
-                CustomerId = 2,
-                PreferredHumidityLevel = 40.0m
+                WorkSpaceId = 10,
+                Name = "Internal-dev",
+                Billable = false,
+                Status = EProjectStatus.CREATED
             },
             new
             {
                 Id = 2,
-                CustomerId = 4,
-                PreferredHumidityLevel = 70.0m
+                WorkSpaceId = 12,
+                Name = "Marketing",
+                Billable = true,
+                Status = EProjectStatus.CREATED
             },
             new
             {
                 Id = 3,
-                CustomerId = 3,
-                PreferredHumidityLevel = 45.5m
+                WorkSpaceId = 10,
+                Name = "Research",
+                Billable = false,
+                Status = EProjectStatus.VALIDATED
             },
             new
             {
                 Id = 4,
-                CustomerId = 1,
-                PreferredHumidityLevel = 57.5m
+                WorkSpaceId = 15,
+                Name = "Consulting",
+                Billable = true,
+                Status = EProjectStatus.PROCESSING
             }
         );
 
-        // Seed MacAddress separately as owned entity
-        builder.Entity<Pot>().OwnsOne(p => p.MacAddress).HasData(
-            new { PotId = 1, Address = "67-E0-B5-2B-DB-67" },
-            new { PotId = 2, Address = "69-3D-91-E2-AA-DC" },
-            new { PotId = 3, Address = "37-AA-35-CE-E6-C2" },
-            new { PotId = 4, Address = "FA-8C-71-C2-C4-79" }
+        builder.Entity<Project>().OwnsOne(p => p.CreatedBy).HasData(
+            new { ProjectId = 1, Value = "11111111-1111-1111-1111-111111111111" },
+            new { ProjectId = 2, Value = "22222222-2222-2222-2222-222222222222" },
+            new { ProjectId = 3, Value = "33333333-3333-3333-3333-333333333333" },
+            new { ProjectId = 4, Value = "44444444-4444-4444-4444-444444444444" }
         );
     }
 }
