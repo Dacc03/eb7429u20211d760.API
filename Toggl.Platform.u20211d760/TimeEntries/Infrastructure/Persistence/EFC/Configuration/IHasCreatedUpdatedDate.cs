@@ -6,7 +6,7 @@ namespace EntityFrameworkCore.CreatedUpdatedDate.Contracts;
 /// Interface for entities that track creation and update timestamps.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public interface IHasCreatedUpdatedDate
 {

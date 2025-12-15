@@ -7,7 +7,7 @@ namespace Toggl.Platform.u20211d760.Shared.Infrastructure.Interfaces.ASP.Configu
 /// Convention to apply kebab-case naming to routes.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public partial class KebabCaseRouteNamingConvention : IControllerModelConvention
 {

@@ -4,7 +4,7 @@ namespace Toggl.Platform.u20211d760.Shared.Domain.Repositories;
 /// Represents the unit of work pattern for managing database transactions.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public interface IUnitOfWork
 {

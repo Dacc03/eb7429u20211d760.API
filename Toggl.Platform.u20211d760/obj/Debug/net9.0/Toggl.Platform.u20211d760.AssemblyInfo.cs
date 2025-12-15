@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Toggl.Platform.u20211d760")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7286b039fa9154d90686ebf3c77fa8da7dde34e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f74f2b77c649f106c48355eb6d94d647c3a8382")]
 [assembly: System.Reflection.AssemblyProductAttribute("Toggl.Platform.u20211d760")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Toggl.Platform.u20211d760")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

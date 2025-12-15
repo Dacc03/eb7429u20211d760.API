@@ -10,7 +10,7 @@ namespace Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Config
 /// The application's database context using Entity Framework Core.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class AppDbContext(DbContextOptions options) : DbContext(options)
 {

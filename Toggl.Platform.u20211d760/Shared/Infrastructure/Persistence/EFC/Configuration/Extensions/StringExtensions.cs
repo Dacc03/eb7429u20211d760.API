@@ -6,7 +6,7 @@ namespace Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Config
 /// Extension methods for string operations.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public static partial class StringExtensions
 {

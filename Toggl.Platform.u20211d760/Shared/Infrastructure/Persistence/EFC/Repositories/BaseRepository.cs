@@ -9,7 +9,7 @@ namespace Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Reposi
 /// </summary>
 /// <typeparam name="TEntity">The type of the entity.</typeparam>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public abstract class BaseRepository<TEntity>(AppDbContext context) : IBaseRepository<TEntity>
     where TEntity : class

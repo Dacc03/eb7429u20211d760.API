@@ -6,7 +6,7 @@ namespace Toggl.Platform.u20211d760.Shared.Infrastructure.Documentation.OpenApi.
 /// Extension methods for configuring OpenAPI documentation services.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public static class WebApplicationBuilderExtensions
 {
@@ -27,7 +27,7 @@ public static class WebApplicationBuilderExtensions
                 Description = "RESTful API for Toggl Project & Time Management Hub",
                 Contact = new OpenApiContact
                 {
-                    Name = "Antonio Rodrigo Duran Diaz",
+                    Name = "July Zelmira Paico Calderon",
                     Email = "u20211d760@upc.edu.pe"
                 }
             });

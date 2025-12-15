@@ -9,7 +9,7 @@ namespace Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Config
 /// Extension methods for configuring database services.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public static class WebApplicationBuilderExtensions
 {
