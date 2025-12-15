@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Toggl.Platform.u20211d760.TimeEntries.Domain.Model.Aggregates;
 using Toggl.Platform.u20211d760.TimeEntries.Domain.Repositories;
@@ -9,7 +10,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Infrastructure.Persistence.EFC.R
 /// Entity Framework Core repository for time entries.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class TimeEntryRepository(AppDbContext context) : BaseRepository<TimeEntry>(context), ITimeEntryRepository
 {

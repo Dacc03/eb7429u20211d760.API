@@ -7,7 +7,7 @@ namespace Toggl.Platform.u20211d760.Projects.Interfaces.REST.Transform;
 /// Assembles project entities into resources.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public static class ProjectResourceFromEntityAssembler
 {

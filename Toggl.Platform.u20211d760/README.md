@@ -1,4 +1,4 @@
-# Toggl Platform API
+﻿# Toggl Platform API
 
 ## Description
 
@@ -56,4 +56,4 @@ dotnet run
 
 ## Author
 
-**Rafael Oswaldo Castro Veramendi u20211d760**
+**July Zelmira Paico Calderon u20211d760**

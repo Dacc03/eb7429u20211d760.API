@@ -6,7 +6,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Domain.Model.Commands;
 /// Command for creating a time entry.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public record CreateTimeEntryCommand(
     int ProjectId,

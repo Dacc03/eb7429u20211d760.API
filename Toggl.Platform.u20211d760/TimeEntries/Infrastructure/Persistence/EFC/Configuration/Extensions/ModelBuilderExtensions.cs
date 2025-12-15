@@ -7,7 +7,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Infrastructure.Persistence.EFC.C
 /// Extension methods for configuring the TimeEntries context model.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public static class ModelBuilderExtensions
 {

@@ -11,7 +11,7 @@ namespace Toggl.Platform.u20211d760.Projects.Application.Internal.EventHandlers;
 /// Handles the <see cref="TimeEntryRegisteredEvent"/> to update project progress.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class TimeEntryRegisteredEventHandler(
     IProjectRepository projectRepository,

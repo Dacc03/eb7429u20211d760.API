@@ -7,7 +7,7 @@ namespace Toggl.Platform.u20211d760.Projects.Application.ACL.Services;
 /// Facade for exposing project capabilities to other bounded contexts.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class ProjectsContextFacade(IProjectQueryService projectQueryService) : IProjectsContextFacade
 {

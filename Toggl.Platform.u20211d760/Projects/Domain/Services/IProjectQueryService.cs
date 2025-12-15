@@ -7,7 +7,7 @@ namespace Toggl.Platform.u20211d760.Projects.Domain.Services;
 /// Service for project queries.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public interface IProjectQueryService
 {

@@ -13,7 +13,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Application.Internal.CommandServ
 /// Handles commands related to time entries.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class TimeEntryCommandService(
     ITimeEntryRepository timeEntryRepository,

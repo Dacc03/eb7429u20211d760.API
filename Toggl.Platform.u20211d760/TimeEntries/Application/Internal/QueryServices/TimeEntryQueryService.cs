@@ -9,7 +9,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Application.Internal.QueryServic
 /// Provides query capabilities for time entries.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class TimeEntryQueryService(ITimeEntryRepository timeEntryRepository) : ITimeEntryQueryService
 {

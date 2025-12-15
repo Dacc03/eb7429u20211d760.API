@@ -6,6 +6,6 @@ namespace Toggl.Platform.u20211d760.Shared.Domain.Model.Events;
 /// Integration event emitted when a time entry is registered.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public record TimeEntryRegisteredEvent(int ProjectId, int DurationMinutes) : IEvent, INotification;

@@ -7,7 +7,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Interfaces.REST.Transform;
 /// Assembles time entry entities into resources.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public static class TimeEntryResourceFromEntityAssembler
 {

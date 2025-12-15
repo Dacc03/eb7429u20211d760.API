@@ -14,7 +14,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Interfaces.REST;
 /// Controller for time entry operations.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 [ApiController]
 [Route("api/v1/time-entries")]

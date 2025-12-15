@@ -4,7 +4,7 @@ namespace Toggl.Platform.u20211d760.Projects.Domain.Model.ValueObjects;
 /// Represents the lifecycle status of a project.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public enum EProjectStatus
 {

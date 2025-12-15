@@ -8,7 +8,7 @@ namespace Toggl.Platform.u20211d760.Projects.Domain.Model.Aggregates;
 /// Represents a Toggl project aggregate root.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class Project : IHasCreatedUpdatedDate
 {

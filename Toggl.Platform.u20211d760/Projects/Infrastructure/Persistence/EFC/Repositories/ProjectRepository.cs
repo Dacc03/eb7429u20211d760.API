@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Toggl.Platform.u20211d760.Projects.Domain.Model.Aggregates;
 using Toggl.Platform.u20211d760.Projects.Domain.Repositories;
+using Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Toggl.Platform.u20211d760.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 namespace Toggl.Platform.u20211d760.Projects.Infrastructure.Persistence.EFC.Repositories;
@@ -9,7 +10,7 @@ namespace Toggl.Platform.u20211d760.Projects.Infrastructure.Persistence.EFC.Repo
 /// Entity Framework Core repository for projects.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class ProjectRepository(AppDbContext context) : BaseRepository<Project>(context), IProjectRepository
 {

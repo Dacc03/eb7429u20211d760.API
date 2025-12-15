@@ -9,7 +9,7 @@ namespace Toggl.Platform.u20211d760.Projects.Application.Internal.QueryServices;
 /// Provides project query capabilities.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public class ProjectQueryService(IProjectRepository projectRepository) : IProjectQueryService
 {

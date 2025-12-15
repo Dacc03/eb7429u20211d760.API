@@ -6,7 +6,7 @@ namespace Toggl.Platform.u20211d760.TimeEntries.Domain.Repositories;
 /// Contract for time entry persistence operations.
 /// </summary>
 /// <remarks>
-/// Author: Rafael Oswaldo Castro Veramendi
+/// Author: July Zelmira Paico Calderon
 /// </remarks>
 public interface ITimeEntryRepository
 {
