@@ -1,26 +1,20 @@
-using Toggl.Platform.u20211d760.Projects.Domain.Model.Queries;
 using Toggl.Platform.u20211d760.Projects.Domain.Services;
 using Toggl.Platform.u20211d760.Projects.Interfaces.ACL;
 
 namespace Toggl.Platform.u20211d760.Projects.Application.ACL.Services;
 
 /// <summary>
-/// Facade for the Projects context.
+/// Facade for exposing project capabilities to other bounded contexts.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: Rafael Oswaldo Castro Veramendi
 /// </remarks>
-public class ProjectsContextFacade(IPotQueryService potQueryService) : IProjectsContextFacade
+public class ProjectsContextFacade(IProjectQueryService projectQueryService) : IProjectsContextFacade
 {
-    public async Task<bool> ExistsPotByMacAddress(string macAddress)
+    /// <inheritdoc />
+    public async Task<bool> ExistsProjectAsync(int projectId)
     {
-        var pot = await potQueryService.Handle(new GetPotByMacAddressQuery(macAddress));
-        return pot != null;
-    }
-
-    public async Task<int> FetchPotIdByMacAddress(string macAddress)
-    {
-        var pot = await potQueryService.Handle(new GetPotByMacAddressQuery(macAddress));
-        return pot?.Id ?? 0;
+        var project = await projectQueryService.FindByIdAsync(projectId);
+        return project != null;
     }
 }
