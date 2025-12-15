@@ -1,0 +1,43 @@
+namespace Toggl.Platform.u20211d760.Shared.Domain.Repositories;
+
+/// <summary>
+/// Defines the basic repository operations for a given entity type.
+/// </summary>
+/// <typeparam name="TEntity">The type of the entity.</typeparam>
+/// <remarks>
+/// Author: Antonio Rodrigo Duran Diaz
+/// </remarks>
+public interface IBaseRepository<TEntity>
+{
+    /// <summary>
+    /// Asynchronously adds a new entity to the repository.
+    /// </summary>
+    /// <param name="entity">The entity to add.</param>
+    /// <returns>A task that represents the asynchronous operation.</returns>
+    Task AddAsync(TEntity entity);
+
+    /// <summary>
+    /// Asynchronously finds an entity by its identifier.
+    /// </summary>
+    /// <param name="id">The identifier of the entity.</param>
+    /// <returns>A task that represents the asynchronous operation, containing the entity if found; otherwise, null.</returns>
+    Task<TEntity?> FindByIdAsync(int id);
+
+    /// <summary>
+    /// Asynchronously retrieves a list of all entities.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation, containing an enumerable of entities.</returns>
+    Task<IEnumerable<TEntity>> ListAsync();
+
+    /// <summary>
+    /// Updates an existing entity in the repository.
+    /// </summary>
+    /// <param name="entity">The entity to update.</param>
+    void Update(TEntity entity);
+
+    /// <summary>
+    /// Removes an entity from the repository.
+    /// </summary>
+    /// <param name="entity">The entity to remove.</param>
+    void Remove(TEntity entity);
+}
