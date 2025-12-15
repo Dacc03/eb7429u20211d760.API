@@ -1,5 +1,4 @@
 using Cortex.Mediator.DependencyInjection;
-using Microsoft.AspNetCore.Localization;
 using Toggl.Platform.u20211d760.Projects.Application.ACL.Services;
 using Toggl.Platform.u20211d760.Projects.Application.Internal.EventHandlers;
 using Toggl.Platform.u20211d760.Projects.Application.Internal.QueryServices;
