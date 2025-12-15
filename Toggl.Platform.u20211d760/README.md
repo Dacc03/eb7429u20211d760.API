@@ -1,49 +1,33 @@
-﻿# Toggl Platform API
+# Toggl Platform API
 
 ## Description
 
-RESTful API for LetPot Smart Self-Watering Planter operations. This API provides endpoints for managing pot data records and pot information, supporting the LetPot ecosystem for intelligent plant care.
+RESTful API for Toggl Project & Time Management Hub, exposing project listings and time entry registration with localization, integration events, and database seeding.
 
 ## Features
 
-- **Data Records Management**: Create and track pot operation data including humidity levels, operation modes, and phases
-- **Pot Management**: Retrieve information about registered pots in the system
-- **Domain-Driven Design**: Clean architecture with bounded contexts (TimeEntries and Projects)
-- **Event-Driven**: Integration events for cross-context communication
-- **Localization**: Support for English (EN, EN-US) and Spanish (ES, ES-PE)
-- **OpenAPI Documentation**: Comprehensive API documentation with Swagger UI
+- **Projects**: Retrieve seeded projects with workspace, billing, status, and creator information.
+- **Time Entries**: Register time entries with validation, duration accumulation, and project status updates when totals exceed 480 minutes.
+- **Domain-Driven Design**: Bounded contexts for Projects and TimeEntries with an Anti-Corruption Layer.
+- **Localization**: Support for English (EN, EN-US) and Spanish (ES, ES-PE).
+- **OpenAPI Documentation**: Swagger UI with operation details.
 
 ## Technology Stack
 
 - **Framework**: ASP.NET Core 9.0
 - **Language**: C# with .NET 9
-- **Database**: MySQL
+- **Database**: MySQL (schema `toggl`)
 - **ORM**: Entity Framework Core 9.0
 - **Documentation**: Swashbuckle (Swagger/OpenAPI)
-- **Patterns**: DDD, CQRS, Repository Pattern, Anti-Corruption Layer
-
-## Bounded Contexts
-
-### TimeEntries Context
-Manages data records from pots, including:
-- Operation modes (STAND_BY, OPERATING)
-- Operation phases (WAITING, WATERING)
-- Humidity level tracking
-- Emission timestamps
-
-### Projects Context
-Manages pot information, including:
-- Pot registration and MAC addresses
-- Customer associations
-- Preferred humidity levels
+- **Patterns**: DDD, CQRS, Repository Pattern, Anti-Corruption Layer, Integration Events
 
 ## API Endpoints
 
-### Data Records
-- `POST /api/v1/data-records` - Create a new data record
+### Time Entries
+- `POST /api/v1/time-entries` - Register a new time entry.
 
-### Pots
-- `GET /api/v1/pots` - Retrieve all pots
+### Projects
+- `GET /api/v1/projects` - Retrieve all projects.
 
 ## Getting Started
 
@@ -70,22 +54,6 @@ dotnet restore
 dotnet run
 ```
 
-## Database Schema
-
-The application uses Entity Framework Core with automatic migrations. The database schema `toggl` will be created automatically on first run with the following tables:
-- `data_records` - TimeEntries data from pots
-- `pots` - Pot information and preferences
-
-## Business Rules
-
-- MAC addresses must follow format: XX-XX-XX-XX-XX-XX
-- Target humidity levels must be between 40.0 and 90.0
-- Humidity levels must be positive values
-- EmittedAt cannot be in the future
-- Data records can only be created for existing pots
-- Preferred humidity levels are automatically updated when new target levels are set
-
 ## Author
 
-**Antonio Rodrigo Duran Diaz u20211d760**
-
+**Rafael Oswaldo Castro Veramendi u20211d760**

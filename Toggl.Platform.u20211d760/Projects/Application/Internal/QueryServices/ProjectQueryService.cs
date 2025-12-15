@@ -6,22 +6,22 @@ using Toggl.Platform.u20211d760.Projects.Domain.Services;
 namespace Toggl.Platform.u20211d760.Projects.Application.Internal.QueryServices;
 
 /// <summary>
-/// Service implementation for pot queries.
+/// Provides project query capabilities.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: Rafael Oswaldo Castro Veramendi
 /// </remarks>
-public class PotQueryService(IPotRepository potRepository) : IPotQueryService
+public class ProjectQueryService(IProjectRepository projectRepository) : IProjectQueryService
 {
     /// <inheritdoc />
-    public async Task<IEnumerable<Pot>> Handle(GetAllPotsQuery query)
+    public async Task<IEnumerable<Project>> Handle(GetAllProjectsQuery query)
     {
-        return await potRepository.ListAsync();
+        return await projectRepository.ListAsync();
     }
 
     /// <inheritdoc />
-    public async Task<Pot?> Handle(GetPotByMacAddressQuery query)
+    public async Task<Project?> FindByIdAsync(int id)
     {
-        return await potRepository.FindByMacAddressAsync(query.MacAddress);
+        return await projectRepository.FindByIdAsync(id);
     }
 }

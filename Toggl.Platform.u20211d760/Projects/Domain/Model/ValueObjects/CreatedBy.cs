@@ -1,9 +1,47 @@
-﻿namespace Toggl.Platform.u20211d760.Projects.Domain.Model.ValueObjects;
+using System.Text.RegularExpressions;
 
-public enum EProjectStatus
+namespace Toggl.Platform.u20211d760.Projects.Domain.Model.ValueObjects;
+
+/// <summary>
+/// Represents the creator identifier for a project.
+/// </summary>
+/// <remarks>
+/// Author: Rafael Oswaldo Castro Veramendi
+/// </remarks>
+public record CreatedBy
 {
-    CREATED = 0,
-    VALIDATED = 1,
-    PROCESSING = 2,
-    SUCCESS = 3
+    private static readonly Regex GuidPattern =
+        new("^[{(]?[0-9A-Fa-f]{8}(-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}[)}]?$", RegexOptions.Compiled);
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CreatedBy"/> record.
+    /// </summary>
+    public CreatedBy() : this(Guid.Empty.ToString())
+    {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CreatedBy"/> record.
+    /// </summary>
+    /// <param name="value">The creator identifier string.</param>
+    /// <exception cref="ArgumentException">Thrown when the value is not a valid GUID.</exception>
+    public CreatedBy(string value)
+    {
+        if (!IsValid(value))
+            throw new ArgumentException("CreatedBy must be a valid GUID", nameof(value));
+
+        Value = value;
+    }
+
+    /// <summary>
+    /// Gets the underlying string value.
+    /// </summary>
+    public string Value { get; }
+
+    /// <summary>
+    /// Determines whether the supplied value is a valid GUID string.
+    /// </summary>
+    /// <param name="value">The value to validate.</param>
+    /// <returns>true when the value matches the GUID format; otherwise, false.</returns>
+    public static bool IsValid(string value) => GuidPattern.IsMatch(value);
 }

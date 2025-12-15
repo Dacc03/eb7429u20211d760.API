@@ -4,10 +4,9 @@ namespace Toggl.Platform.u20211d760.Projects.Interfaces.ACL;
 /// Public interface for the Projects context facade.
 /// </summary>
 /// <remarks>
-/// Author: Antonio Rodrigo Duran Diaz
+/// Author: Rafael Oswaldo Castro Veramendi
 /// </remarks>
 public interface IProjectsContextFacade
 {
-    Task<bool> ExistsPotByMacAddress(string macAddress);
-    Task<int> FetchPotIdByMacAddress(string macAddress);
+    Task<bool> ExistsProjectAsync(int projectId);
 }
